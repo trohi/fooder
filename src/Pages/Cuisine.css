@@ -1,0 +1,10 @@
+#cuisine-component{
+    margin:0px !important;
+    width:99vw;
+    height:100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-image:url('../cuisine-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,0 +1,11 @@
+.list-group-item{
+    height:15vh;
+    padding-top:5vh !important;
+    background:rgba(72, 72, 75, 0.3) !important;
+    color:white
+}
+
+.list-group-item:hover{
+    transform: scale(1.03);
+    background:rgba(198, 199, 209, 0.3) !important;
+}
