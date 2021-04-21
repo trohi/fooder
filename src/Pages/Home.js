@@ -12,10 +12,9 @@ import Button from  'react-bootstrap/Button'
 
 
 function HomePage(){
+    
     const dispatch = useDispatch()
-    const ll =()=>{
-        console.log("EVO JESAM LI JA MAHNIT BGT")
-    }
+
     return (
         <Container fluid id="container">
             <Row>

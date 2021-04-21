@@ -12,7 +12,9 @@ export const reducer = (state = initialState, action) => {
                 loading: !state.loading
             })
             console.log(clone.loading)
-            return clone
+            return clone;
+        default:
+            return state
     }
 }
 

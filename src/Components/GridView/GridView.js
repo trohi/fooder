@@ -2,11 +2,15 @@ import './GridView.css'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
+import Loading from '../LoadingIcon/loading'
+import { useSelector } from 'react-redux'
 
 function GridView(){
+    const isLoading = useSelector(state => state.loading)
+
     return(
+        isLoading ? <Loading></Loading> :
         <Row className="pt-5">
             <Col xs={12} md={4}>
                 <Link to="/cuisine">

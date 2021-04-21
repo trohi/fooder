@@ -2,7 +2,9 @@ import './loading.css'
 
 function Loading(){
     return(
-        <img id="loading" src="https://img.icons8.com/officel/72/pizza.png"></img>
+        <div className="loadingWrapper">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+            <img alt="loading icon" id="loading" src="https://img.icons8.com/doodle/344/pizza--v1.png"></img>
+        </div>
     )
 }
 
