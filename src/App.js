@@ -1,5 +1,6 @@
 import HomePage from './Pages/Home'
 import Cuisine from './Pages/Cuisine'
+import SingleMeal from './Pages/SingleMeal'
 import NavMenu from './Components/Navbar/Navbar'
 import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom'
 import { useEffect } from 'react'
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path="/cuisine">
             <Cuisine></Cuisine>
+          </Route>
+          <Route path="/signle-meal">
+            <SingleMeal></SingleMeal>
           </Route>
         </Switch>
       </div>
