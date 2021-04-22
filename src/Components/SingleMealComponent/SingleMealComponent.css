@@ -4,11 +4,10 @@
 }
 
 .singleMealParagraph{
-    display:flex;
-    align-content: flex-start;
     line-height: 180%;
     font-size:20px;
-    padding:1rem
+    padding:1rem;
+    text-align: start;
 }
 
 hr{
