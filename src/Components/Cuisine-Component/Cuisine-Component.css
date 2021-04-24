@@ -5,9 +5,25 @@
     color:white
 }
 
+.list-group{
+    max-height:80vh;
+    overflow-y:scroll;
+    overflow-x: hidden;
+}
+
 .list-group-item:hover{
     transform: scale(1.03);
     background:rgba(198, 199, 209, 0.3) !important;
+} 
+
+.list-group-item:hover + .singleMealImg{
+    visibility: visible;
+}
+
+.singleMealImg{
+    max-width:100%;
+    height:auto;
+    visibility: hidden;  
 }
 
 @media only screen and (max-width:400px) {

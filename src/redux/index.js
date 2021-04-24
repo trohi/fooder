@@ -13,6 +13,11 @@ export const reducer = (state = initialState, action) => {
             })
             console.log(clone.loading)
             return clone;
+        case 'LOAD_DATA':
+            return state = {
+                ...state,
+                data: [...action.payload]
+            };
         default:
             return state
     }

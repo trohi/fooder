@@ -1,6 +1,6 @@
 import './loading.css'
 
-function Loading(){
+function LoadingComponent(){
     return(
         <div className="loadingWrapper">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
             <img alt="loading icon" id="loading" src="https://img.icons8.com/doodle/344/pizza--v1.png"></img>
@@ -8,4 +8,4 @@ function Loading(){
     )
 }
 
-export default Loading
+export default LoadingComponent
