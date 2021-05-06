@@ -18,7 +18,6 @@ function HomePage(){
     return (
         <Container fluid id="container">
             <Row>
-                <Button onClick={()=>dispatch(Loading())} >'EREE</Button>
                 <GridView></GridView>
             </Row>
         </Container>        

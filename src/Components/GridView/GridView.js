@@ -1,11 +1,18 @@
 import './GridView.css'
 import Card from 'react-bootstrap/Card'
+import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Badge from 'react-bootstrap/Badge'
+import Button from 'react-bootstrap/Button'
+import { Search } from 'react-bootstrap-icons'
+
+import ModalComponent from '../Modal/Modal.js'
 import { Link } from 'react-router-dom'
 import { Loading, LoadData } from '../../redux/actions.js'
 import LoadingComponent from '../LoadingIcon/loading'
 import { useSelector, useDispatch } from 'react-redux'
+
 //importing images
 import americanCuisineImg from '../../cuisineImages/american-cuisine.jpeg'
 import greekCuisineImg from '../../cuisineImages/greek-cuisine.jpg'
@@ -19,7 +26,7 @@ function GridView(){
     const isLoading = useSelector(state => state.loading)
     const dispatch = useDispatch()
 
-    const GetData =(cuisineType)=>{
+    const GetData = (cuisineType)=>{
         dispatch(Loading())
         fetch(`https://api.spoonacular.com/recipes/complexSearch?cuisine=${cuisineType}&apiKey=28087beca5d243b28544ddf2484ea4ac`)
         .then(res=>{
@@ -39,7 +46,19 @@ function GridView(){
 
     return(
         isLoading ? <LoadingComponent></LoadingComponent> :
-        <Row className="pt-5">
+        <Row>
+            <ModalComponent></ModalComponent>
+            <Col xs={12}>
+                {/* <div className="SearchIconWrapper">
+                    <Button className="searchIcon mt-4" variant="outline-danger" onClick={()=>{dispatch(ShowModal())}}>
+                        <Search size={25}></Search>
+                    </Button>
+                </div> */}
+            </Col>
+            <Col xs={12} className="mb-5 heading-paragraph">
+                <h3>Choose between different cuisines</h3>
+                <h5>and access meals in that grouping</h5>
+            </Col>
             <Col xs={12} md={4}>
                 <Link to="/cuisine" onClick={()=>GetData('Greek')}>
                     <Card className="grid-card ml-auto">

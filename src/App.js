@@ -31,7 +31,7 @@ function App() {
           <Route path="/cuisine">
             <Cuisine></Cuisine>
           </Route>
-          <Route path="/signle-meal">
+          <Route path="/single-meal">
             <SingleMeal></SingleMeal>
           </Route>
         </Switch>

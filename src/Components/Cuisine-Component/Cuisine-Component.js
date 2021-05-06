@@ -35,7 +35,7 @@ function CuisineComponent(){
                     {
                         data.map((meal,index) => {
                             return (
-                                <Link to="/single-meal">
+                                <Link to="/single-meal" key={index}>
                                     <ListGroup.Item >{meal.title} </ListGroup.Item>
                                 </Link>
                             )

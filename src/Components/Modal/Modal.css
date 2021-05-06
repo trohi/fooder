@@ -1,0 +1,19 @@
+.SearchIconWrapper{
+    background:rgb(0, 0, 0, 0.6);
+    margin:0% auto 5% auto;
+    width:200px;
+    height:100px;
+    border-bottom-left-radius: 110px;
+    border-bottom-right-radius: 110px; 
+    border: 2px solid #dc3545;
+    border-top: 0;   
+}
+
+.searchIcon{
+    margin-right:2%;
+    margin-top:0px
+}
+
+.modal-content{
+    background:red !important
+}

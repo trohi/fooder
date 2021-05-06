@@ -2,6 +2,7 @@ import { createStore } from 'redux'
 
 const initialState = {
     loading:false,
+    modal:false,
     data:[]
 }
 
