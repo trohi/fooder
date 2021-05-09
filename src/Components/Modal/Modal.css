@@ -1,5 +1,12 @@
 .SearchIconWrapper{
-    background:rgb(0, 0, 0, 0.6);
+    /* background:rgb(0, 0, 0, 0.6); */
+    background: rgb(0, 0, 0, 0.6) -webkit-linear-gradient(left,#1B1B1B, #FFF) no-repeat 0 0 / 40px;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.2);
+    -webkit-background-clip:border-box;
+    background-clip: border-box;
+    animation: LightSweep 5s ease-in infinite;
+    
+    animation-timing-function: cubic-bezier(1, 0, 0, 1);
     margin:0% auto 5% auto;
     width:200px;
     height:100px;
@@ -15,5 +22,21 @@
 }
 
 .modal-content{
-    background:red !important
+    border:3px solid #dc3545 !important;
+    background:rgb(0, 0, 0, 0.8)
+}   
+
+@keyframes LightSweep {
+    0% {
+        background-position: -40%;
+    }
+
+    20% {
+        background-position:130%;
+    }
+
+    100% {
+        background-position: 130%;
+    }
+    
 }

@@ -1,6 +1,9 @@
 import './Modal.css'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import FormControl from 'react-bootstrap/FormControl'
+import Badge from 'react-bootstrap/Badge'
 import { Search } from 'react-bootstrap-icons'
 import { useDispatch } from 'react-redux'
 import { useState } from 'react'
@@ -30,16 +33,21 @@ function ModalComponent(){
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                Modal heading
+                  <Form>
+                    <FormControl type="text" placeholder="Search"/>
+                  </Form>
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <h4>Centered Modal</h4>
-              <p>
-                Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                consectetur ac, vestibulum at eros.
-              </p>
+              <h4>Include tags</h4>
+              <h4><Badge variant="secondary">Seafood</Badge></h4>
+              <h4><Badge variant="secondary">Vegetarian</Badge></h4>
+              <h4><Badge variant="secondary">Meat</Badge></h4>
+              <h4><Badge variant="secondary">Pasta</Badge></h4>
+              <h4><Badge variant="secondary">Vegetable</Badge></h4>
+              <h4><Badge variant="secondary">Fruit</Badge></h4>
+              <h4><Badge variant="secondary">Salads</Badge></h4>
+              <h4><Badge variant="secondary">Seafood</Badge></h4>
             </Modal.Body>
             <Modal.Footer>
               <Button onClick={handleClose}>Close</Button>
