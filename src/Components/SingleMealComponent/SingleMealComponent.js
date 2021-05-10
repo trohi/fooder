@@ -1,28 +1,56 @@
-import Col from 'react-bootstrap/Col'
 import './SingleMealComponent.css'
+import parse from 'html-react-parser'
+import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
+import Accordition from 'react-bootstrap/Accordion'
 import { useSelector } from 'react-redux'
+import { Clock, Person } from 'react-bootstrap-icons'
 
 function SingleMealComponent(){
     const meal = useSelector(state => state.singleMeal)
+
     return (
         <>
-        <Col xs={12} md={6} id="singleMealCol" className="mt-md-5 ml-md-5">
+        <Col xs={12} md={6} id="singleMealCol" className="my-md-4 ml-md-5">
             <h4 className="mt-5">{meal.title}</h4>
-            <p>Ready in {meal.readyInMinutes} minutes <br></br> Servings for {meal.servings} </p>
-            <div className="singleMealParagraph">
-                <ul>
-                    {meal.extendedIngredients.map(ingredient=>{
-                        return <li>{ingredient.nameClean} {ingredient.original}</li>
-                    })}
-                </ul>
-            </div>
-            <hr></hr>
-            <div>{meal.summary}.</div>
-            <hr></hr>
-            <div></div>
+            <p>Ready in {meal.readyInMinutes} minutes <Clock className="clockIcon"></Clock><br></br> Servings for {meal.servings} <Person className="personIcon"></Person></p>
+            <div className="mb-3">
+                        <img className="mealImage" src={meal.image}></img>
+                    </div>
+            <Accordition defaultActiveKey="0">
+                <Accordition.Toggle as={Button} eventKey="0" variant="outline-light" className="my-3" >Ingredients</Accordition.Toggle>
+                <Accordition.Collapse eventKey="0">
+                    <div className="mealIngredients">
+                        <ul>
+                            {
+                             meal.extendedIngredients ?  meal.extendedIngredients.map(ingredient=>{
+                                    return <li>{ingredient.nameClean} {ingredient.original}</li>
+                                }) : <div></div>
+                            }
+                        </ul>
+                    </div>
+                </Accordition.Collapse>
+                <hr></hr>
+                <Accordition.Toggle as={Button} eventKey="1" variant="outline-light" className="my-3">Summary</Accordition.Toggle>
+                <Accordition.Collapse eventKey="1">
+                    <div className="mealSummary">
+                        {
+                            parse(`${meal.summary}`)
+                        }
+                    </div>
+                </Accordition.Collapse>
+                <hr></hr>
+                <Accordition.Toggle as={Button} eventKey="3" variant="outline-light" className="my-3">Instructions</Accordition.Toggle>
+                <Accordition.Collapse eventKey="3">
+                    <div className="mealInstructions">
+                        {
+                            parse(`${meal.instructions}`)
+                        }
+                    </div>
+                </Accordition.Collapse>
+            </Accordition>
         </Col>
         <Col xs={12} md={3}>
-            <img src={meal.image}></img>
         
         </Col>
         </>

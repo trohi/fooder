@@ -1,5 +1,4 @@
 .SearchIconWrapper{
-    /* background:rgb(0, 0, 0, 0.6); */
     background: rgb(0, 0, 0, 0.6) -webkit-linear-gradient(left,#1B1B1B, #FFF) no-repeat 0 0 / 40px;
     -webkit-text-fill-color: rgba(255, 255, 255, 0.2);
     -webkit-background-clip:border-box;
