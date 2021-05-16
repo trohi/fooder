@@ -1,8 +1,7 @@
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import SingleMealComponent from '../Components/SingleMealComponent/SingleMealComponent'
 import './SingleMeal.css'
+import Container from 'react-bootstrap/Container' 
+import Row from 'react-bootstrap/Row'               
+import SingleMealComponent from '../Components/SingleMealComponent/SingleMealComponent' 
 
 function SingleMeal(){
     return(

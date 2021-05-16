@@ -1,10 +1,10 @@
 import './SingleMealComponent.css'
 import parse from 'html-react-parser'
-import Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/Button'
-import Accordition from 'react-bootstrap/Accordion'
-import { useSelector } from 'react-redux'
+import Col from 'react-bootstrap/Col'                 
+import Button from 'react-bootstrap/Button'           
+import Accordition from 'react-bootstrap/Accordion'   
 import { Clock, Person } from 'react-bootstrap-icons'
+import { useSelector } from 'react-redux'
 
 function SingleMealComponent(){
     const meal = useSelector(state => state.singleMeal)
@@ -23,8 +23,8 @@ function SingleMealComponent(){
                     <div className="mealIngredients">
                         <ul>
                             {
-                             meal.extendedIngredients ?  meal.extendedIngredients.map(ingredient=>{
-                                    return <li>{ingredient.nameClean} {ingredient.original}</li>
+                             meal.extendedIngredients ?  meal.extendedIngredients.map((ingredient,index)=>{
+                                    return <li key={index}>{ingredient.nameClean} {ingredient.original}</li>
                                 }) : <div></div>
                             }
                         </ul>
