@@ -21,6 +21,8 @@ import indianCuisineImg from '../../cuisineImages/indian-cuisine.jpeg'
 import mediterraneanCuisineImg from '../../cuisineImages/mediterranean-cuisine.jpg'
 import mexicanCuisineImg from '../../cuisineImages/mexican-cuisine.jpeg'
 import thaiCuisineImg from '../../cuisineImages/thai-cuisine.jpeg'
+import chineseCuisineImg from '../../cuisineImages/chinese-cuisine.jpg'
+import frenchCuisineImg from '../../cuisineImages/french-cuisine.jpg'
 
 function GridView(){
     const isLoading = useSelector(state => state.loading)
@@ -49,17 +51,12 @@ function GridView(){
         <Row>
             <ModalComponent></ModalComponent>
             <Col xs={12}>
-                {/* <div className="SearchIconWrapper">
-                    <Button className="searchIcon mt-4" variant="outline-danger" onClick={()=>{dispatch(ShowModal())}}>
-                        <Search size={25}></Search>
-                    </Button>
-                </div> */}
             </Col>
             <Col xs={12} className="mb-5 heading-paragraph">
                 <h3>Choose between different cuisines</h3>
                 <h5>and access meals in that grouping</h5>
             </Col>
-            <Col xs={12} md={4}>
+            <Col xs={12} md={4} className="mt-3">
                 <Link to="/cuisine" onClick={()=>GetData('Greek')}>
                     <Card className="grid-card ml-auto">
                         <Card.Img variant="top" src={greekCuisineImg}></Card.Img>
@@ -67,7 +64,7 @@ function GridView(){
                     </Card>
                 </Link>
             </Col>
-            <Col xs={12} md={4}>
+            <Col xs={12} md={4} className="mt-3">
                 <Link to="/cuisine" onClick={()=>GetData('American')}>
                     <Card className="grid-card mx-auto">
                         <Card.Img variant="top" src={americanCuisineImg}></Card.Img>
@@ -75,7 +72,7 @@ function GridView(){
                     </Card>
                 </Link>
             </Col>
-            <Col xs={12} md={4}>
+            <Col xs={12} md={4} className="mt-3">
                 <Link to="/cuisine" onClick={()=>GetData('Mediterranean')}>
                     <Card className="grid-card mr-auto">
                         <Card.Img variant="top" src={mediterraneanCuisineImg}></Card.Img>
@@ -83,7 +80,7 @@ function GridView(){
                     </Card>
                 </Link>
             </Col>
-            <Col xs={12} md={4}>
+            <Col xs={12} md={4} className="mt-3">
                 <Link to="/cuisine">
                     <Card className="grid-card ml-auto" onClick={()=>GetData('Mexican')}>
                         <Card.Img variant="top" src={mexicanCuisineImg}></Card.Img>
@@ -91,7 +88,7 @@ function GridView(){
                     </Card>
                 </Link>
             </Col>
-            <Col xs={12} md={4}>
+            <Col xs={12} md={4} className="mt-3">
                 <Link to="/cuisine" onClick={()=>GetData('Indian')}>
                     <Card className="grid-card mx-auto">
                         <Card.Img variant="top" src={indianCuisineImg}></Card.Img>
@@ -99,7 +96,7 @@ function GridView(){
                     </Card>
                 </Link>
             </Col>
-            <Col xs={12} md={4}>
+            <Col xs={12} md={4} className="mt-3">
                 <Link to="/cuisine" onClick={()=>GetData('Eastern-european')}>
                     <Card className="grid-card mr-auto">
                         <Card.Img variant="top" src={estEuropeanCuisineImg}></Card.Img>
@@ -107,11 +104,27 @@ function GridView(){
                     </Card>
                 </Link>
             </Col>
-            <Col xs={12} md={4}>
+            <Col xs={12} md={4} className="mt-3">
                 <Link to="/cuisine" onClick={()=>GetData('Thai')}>
                     <Card className="grid-card ml-auto">
                         <Card.Img variant="top" src={thaiCuisineImg}></Card.Img>
                         <Card.Title >Thai cuisine</Card.Title>
+                    </Card>
+                </Link>
+            </Col>
+            <Col xs={12} md={4} className="mt-3">
+                <Link to="/cuisine" onClick={()=>GetData('Chinese')}>
+                    <Card className="grid-card mx-auto">
+                        <Card.Img variant="top" src={chineseCuisineImg}></Card.Img>
+                        <Card.Title>Chinese cuisine</Card.Title>
+                    </Card>
+                </Link>
+            </Col>
+            <Col xs={12} md={4} className="mt-3">
+                <Link to="/cuisine" onClick={()=>GetData('French')}>
+                    <Card className="grid-card mr-auto">
+                        <Card.Img variant="top" src={frenchCuisineImg}></Card.Img>
+                        <Card.Title>French cuisine</Card.Title>
                     </Card>
                 </Link>
             </Col>

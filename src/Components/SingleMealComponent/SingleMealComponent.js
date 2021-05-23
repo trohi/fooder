@@ -2,8 +2,9 @@ import './SingleMealComponent.css'
 import parse from 'html-react-parser'
 import Col from 'react-bootstrap/Col'                 
 import Button from 'react-bootstrap/Button'           
-import Accordition from 'react-bootstrap/Accordion'   
-import { Clock, Person } from 'react-bootstrap-icons'
+import Accordition from 'react-bootstrap/Accordion'
+import Badge from 'react-bootstrap/Badge'
+import { Clock, Person, ArrowRight } from 'react-bootstrap-icons'
 import { useSelector } from 'react-redux'
 
 function SingleMealComponent(){
@@ -48,6 +49,9 @@ function SingleMealComponent(){
                         }
                     </div>
                 </Accordition.Collapse>
+                <hr></hr>
+                <Accordition.Toggle as={Button} eventKey="4" variant="outline-light" className="my-3">vine pairing</Accordition.Toggle>
+                <Accordition.Collapse eventKey="4"><div>TEXTY</div></Accordition.Collapse>
             </Accordition>
         </Col>
         <Col xs={12} md={3}>

@@ -4,7 +4,6 @@
     -webkit-background-clip:border-box;
     background-clip: border-box;
     animation: LightSweep 5s ease-in infinite;
-    
     animation-timing-function: cubic-bezier(1, 0, 0, 1);
     margin:0% auto 5% auto;
     width:200px;
@@ -21,9 +20,18 @@
 }
 
 .modal-content{
-    border:3px solid #dc3545 !important;
-    background:rgb(0, 0, 0, 0.8)
-}   
+    border:2px solid #dc3545 !important;
+    background:rgb(0, 0, 0, 0.8) !important
+}
+
+.modal-body{
+    display:inline-flex;
+    padding:25%
+}
+
+.close{
+    color: white !important;
+}
 
 @keyframes LightSweep {
     0% {

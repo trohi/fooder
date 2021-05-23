@@ -13,7 +13,6 @@ export const reducer = (state = initialState, action) => {
             let clone = Object.assign({}, state,{
                 loading: !state.loading
             })
-            //console.log(clone.loading)
             return clone;
         case 'LOAD_DATA':
             return state = {

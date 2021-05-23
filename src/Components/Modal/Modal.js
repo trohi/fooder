@@ -39,18 +39,17 @@ function ModalComponent(){
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <h4>Include tags</h4>
-              <h4><Badge variant="secondary">Seafood</Badge></h4>
-              <h4><Badge variant="secondary">Vegetarian</Badge></h4>
-              <h4><Badge variant="secondary">Meat</Badge></h4>
-              <h4><Badge variant="secondary">Pasta</Badge></h4>
-              <h4><Badge variant="secondary">Vegetable</Badge></h4>
-              <h4><Badge variant="secondary">Fruit</Badge></h4>
-              <h4><Badge variant="secondary">Salads</Badge></h4>
-              <h4><Badge variant="secondary">Seafood</Badge></h4>
+              <h4><Badge variant="secondary" className="mx-1">Seafood</Badge></h4>
+              <h4><Badge variant="secondary" className="mx-1">Vegetarian</Badge></h4>
+              <h4><Badge variant="secondary" className="mx-1">Meat</Badge></h4>
+              <h4><Badge variant="secondary" className="mx-1">Pasta</Badge></h4>
+              <h4><Badge variant="secondary" className="mx-1">Vegetable</Badge></h4>
+              <h4><Badge variant="secondary" className="mx-1">Fruit</Badge></h4>
+              <h4><Badge variant="secondary" className="mx-1">Salads</Badge></h4>
+              <h4><Badge variant="secondary" className="mx-1">Seafood</Badge></h4>
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={handleClose}>Close</Button>
+              <Button onClick={handleClose} variant="danger">Close</Button>
             </Modal.Footer>
         </Modal>
         </>
