@@ -7,6 +7,7 @@ import Badge from 'react-bootstrap/Badge'
 import Button from 'react-bootstrap/Button'
 import { Search } from 'react-bootstrap-icons'
 
+import NavMenu from '../Navbar/Navbar'
 import ModalComponent from '../Modal/Modal.js'
 import { Link } from 'react-router-dom'
 import { Loading, LoadData } from '../../redux/actions.js'
@@ -49,6 +50,7 @@ function GridView(){
     return(
         isLoading ? <LoadingComponent></LoadingComponent> :
         <Row>
+            <NavMenu></NavMenu>
             <ModalComponent></ModalComponent>
             <Col xs={12}>
             </Col>
@@ -104,7 +106,7 @@ function GridView(){
                     </Card>
                 </Link>
             </Col>
-            <Col xs={12} md={4} className="mt-3">
+            <Col xs={12} md={4} className="mt-3 mb-5">
                 <Link to="/cuisine" onClick={()=>GetData('Thai')}>
                     <Card className="grid-card ml-auto">
                         <Card.Img variant="top" src={thaiCuisineImg}></Card.Img>
@@ -112,7 +114,7 @@ function GridView(){
                     </Card>
                 </Link>
             </Col>
-            <Col xs={12} md={4} className="mt-3">
+            <Col xs={12} md={4} className="mt-3 mb-5">
                 <Link to="/cuisine" onClick={()=>GetData('Chinese')}>
                     <Card className="grid-card mx-auto">
                         <Card.Img variant="top" src={chineseCuisineImg}></Card.Img>
@@ -120,7 +122,7 @@ function GridView(){
                     </Card>
                 </Link>
             </Col>
-            <Col xs={12} md={4} className="mt-3">
+            <Col xs={12} md={4} className="mt-3 mb-5">
                 <Link to="/cuisine" onClick={()=>GetData('French')}>
                     <Card className="grid-card mr-auto">
                         <Card.Img variant="top" src={frenchCuisineImg}></Card.Img>

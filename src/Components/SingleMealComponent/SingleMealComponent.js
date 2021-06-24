@@ -18,7 +18,16 @@ function SingleMealComponent(){
             <div className="mb-3">
                         <img className="mealImage" src={meal.image}></img>
                     </div>
-            <Accordition defaultActiveKey="0">
+            <Accordition defaultActiveKey="1">
+            <Accordition.Toggle as={Button} eventKey="1" variant="outline-light" className="my-3">Summary</Accordition.Toggle>
+                <Accordition.Collapse eventKey="1">
+                    <div className="mealSummary">
+                        {
+                            parse(`${meal.summary}`)
+                        }
+                    </div>
+                </Accordition.Collapse>
+                <hr></hr>
                 <Accordition.Toggle as={Button} eventKey="0" variant="outline-light" className="my-3" >Ingredients</Accordition.Toggle>
                 <Accordition.Collapse eventKey="0">
                     <div className="mealIngredients">
@@ -32,26 +41,15 @@ function SingleMealComponent(){
                     </div>
                 </Accordition.Collapse>
                 <hr></hr>
-                <Accordition.Toggle as={Button} eventKey="1" variant="outline-light" className="my-3">Summary</Accordition.Toggle>
-                <Accordition.Collapse eventKey="1">
-                    <div className="mealSummary">
-                        {
-                            parse(`${meal.summary}`)
-                        }
-                    </div>
-                </Accordition.Collapse>
-                <hr></hr>
-                <Accordition.Toggle as={Button} eventKey="3" variant="outline-light" className="my-3">Instructions</Accordition.Toggle>
-                <Accordition.Collapse eventKey="3">
+                 <Accordition.Toggle as={Button} eventKey="3" variant="outline-light" className="my-3">Instructions</Accordition.Toggle>
+                <Accordition.Collapse eventKey="3" data-parent="#" >
                     <div className="mealInstructions">
                         {
                             parse(`${meal.instructions}`)
                         }
                     </div>
-                </Accordition.Collapse>
+                </Accordition.Collapse> 
                 <hr></hr>
-                <Accordition.Toggle as={Button} eventKey="4" variant="outline-light" className="my-3">vine pairing</Accordition.Toggle>
-                <Accordition.Collapse eventKey="4"><div>TEXTY</div></Accordition.Collapse>
             </Accordition>
         </Col>
         <Col xs={12} md={3}>

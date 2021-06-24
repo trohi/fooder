@@ -21,16 +21,30 @@
 
 .modal-content{
     border:2px solid #dc3545 !important;
-    background:rgb(0, 0, 0, 0.8) !important
+    background:rgb(0, 0, 0, 0.8) !important; 
 }
 
 .modal-body{
-    display:inline-flex;
-    padding:25%
-}
+    /* display:inline-flex; */
+    justify-content: center;
+    padding:25%;
+    color: white !important
+} 
 
 .close{
     color: white !important;
+}
+
+.selected{
+    background-color:green
+}
+
+.unselected{
+    background-color: gray;
+}
+
+.badge{
+    background-color: gray;
 }
 
 @keyframes LightSweep {

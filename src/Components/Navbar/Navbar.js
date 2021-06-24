@@ -7,26 +7,260 @@ import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 
 function NavMenu() {
+
+  const toggleDropdown =(e)=>{
+    
+  }
     return (
-       <Navbar>
-           <Navbar.Brand className="text-success mr-4">Fooder</Navbar.Brand>
-           <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-           <Navbar.Collapse>
-           <Nav className="mr-auto">
-           <NavDropdown title="Menu" id="basic-nav-dropdown">
-             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-             <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-             <NavDropdown.Divider />
-             <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-           </NavDropdown>
-           </Nav>
-            <Form inline>
-              <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-              <Button variant="outline-success">Search</Button>
-            </Form>
-           </Navbar.Collapse>
-       </Navbar>
+
+     /*   <div id="sidebar-wrapper">
+        <div>Brand</div>
+        <hr></hr>
+        <div>Filters</div>
+        <div>filter1</div>
+        <div>filter2</div>
+        <div>filter3</div>
+        
+        <div>filter1</div>
+        <div>filter2</div>
+        <div>filter3</div>
+        
+        <div>filter1</div>
+        <div>filter2</div>
+        <div>filter3</div>
+       </div>h1
+ */
+<>
+<nav className="navbar navbar-default no-margin">
+      
+      <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul className="nav navbar-nav">
+            <li className="active">
+               <button className="navbar-toggle collapse in" className="glyphicon glyphicon-th-large" aria-hidden="true">
+               </button>
+            </li>
+         </ul>
+      </div>
+   </nav> 
+      <div id="sidebar-wrapper">
+         <ul className="sidebar-nav nav-pills nav-stacked" id="menu">
+         <li className="mt-3">
+               <a href="#"> <span className="fa-stack fa-lg pull-left"><i className="fa fa-random fa-stack-1x "></i></span>Random meal</a>
+            </li>
+            <hr></hr>
+            <li className="active">
+              <div className="sidebar-header">Filters</div>
+               <a className="special-a mt-3 mb-2" href="#"><span className="fa-stack fa-lg pull-left"><i className="fa fa-th-list fa-stack-1x "></i></span>Type</a>
+               <ul className="nav-pills nav-stacked" >
+               <Form>
+                  <li>
+                     <Form.Check 
+                       type="switch"
+                       id="custom-switch-1"
+                       label="Main course"
+                     />
+                  </li>
+                  <li>
+                     <Form.Check 
+                       type="switch"
+                       id="custom-switch-2"
+                       label="Dessert"
+                     />
+                  </li>
+                  <li>
+                     <Form.Check 
+                       type="switch"
+                       id="custom-switch-3"
+                       label="Appetizer"
+                     />
+                  </li>
+                  <li>
+                     <Form.Check 
+                       type="switch"
+                       id="custom-switch-4"
+                       label="Salad"
+                     />
+                  </li>
+                  <li>
+                     <Form.Check 
+                       type="switch"
+                       id="custom-switch-5"
+                       label="Bread"
+                     />
+                  </li>
+                  <li>
+                     <Form.Check 
+                       type="switch"
+                       id="custom-switch-6"
+                       label="Breakfast"
+                     />
+                  </li>
+                  <li>
+                     <Form.Check 
+                       type="switch"
+                       id="custom-switch-7"
+                       label="Soup"
+                     />
+                  </li>
+                  <li>
+                     <Form.Check 
+                       type="switch"
+                       id="custom-switch-8"
+                       label="Souce"
+                     />
+                  </li>
+                  <li>
+                     <Form.Check 
+                       type="switch"
+                       id="custom-switch-9"
+                       label="Marinade"
+                     />
+                  </li>
+                  </Form>
+               </ul>
+            </li>
+            <li>
+               <a className="special-a mt-3 mb-2" href="#"><span className="fa-stack fa-lg pull-left"><i className="fa fa-asterisk fa-stack-1x "></i></span>Intolerances</a>
+               <ul className="nav-pills nav-stacked">
+                  <Form>
+                     <li>
+                        <Form.Check 
+                           type="switch"
+                           id="custom-switch-10"
+                           label="Dairy"
+                        />
+                     </li>
+                     <li>
+                        <Form.Check 
+                           type="switch"
+                           id="custom-switch-11"
+                           label="Egg"
+                        />
+                     </li>
+                     <li>
+                        <Form.Check 
+                           type="switch"
+                           id="custom-switch-12"
+                           label="Gluten"
+                        />
+                     </li>
+                     <li>
+                        <Form.Check 
+                           type="switch"
+                           id="custom-switch-13"
+                           label="Grain"
+                        />
+                     </li>
+                     <li>
+                        <Form.Check 
+                           type="switch"
+                           id="custom-switch-14"
+                           label="Peanut"
+                        />
+                     </li>
+                     <li>
+                        <Form.Check 
+                           type="switch"
+                           id="custom-switch-15"
+                           label="Seafood"
+                        />
+                     </li>
+                     <li>
+                        <Form.Check 
+                           type="switch"
+                           id="custom-switch-16"
+                           label="Sesame"
+                        />
+                     </li>
+                     <li>
+                        <Form.Check 
+                           type="switch"
+                           id="custom-switch-17"
+                           label="Shellfish"
+                        />
+                     </li>
+                     <li>
+                        <Form.Check 
+                           type="switch"
+                           id="custom-switch-18"
+                           label="Soy"
+                        />
+                     </li>
+                     <li>
+                        <Form.Check 
+                           type="switch"
+                           id="custom-switch-19"
+                           label="Sulfite"
+                        />
+                     </li>
+                     <li>
+                        <Form.Check 
+                           type="switch"
+                           id="custom-switch-20"
+                           label="Tree nut"
+                        />
+                     </li>
+                     <li>
+                        <Form.Check 
+                           type="switch"
+                           id="custom-switch-21"
+                           label="Wheat"
+                        />
+                     </li>
+                  </Form>
+               </ul>
+            </li>
+            <li>
+               <a className="special-a mt-3 mb-2" href="#"><span className="fa-stack fa-lg pull-left"><i className="fa fa-hand-stop-o fa-stack-1x "></i></span>Diet</a>
+               <ul className="nav-pills nav-stacked">
+                  <Form>
+                     <li>
+                        <Form.Check 
+                          type="switch"
+                          id="custom-switch-22"
+                          label="Gluten free"
+                        />
+                     </li>
+                     <li>
+                        <Form.Check 
+                          type="switch"
+                          id="custom-switch-23"
+                          label="Ketogenic"
+                        />
+                     </li>
+                     <li>
+                        <Form.Check 
+                          type="switch"
+                          id="custom-switch-24"
+                          label="Vegetarian"
+                        />
+                     </li>
+                     <li><Form.Check 
+                          type="switch"
+                          id="custom-switch-25"
+                          label="Ovo vegetarian"
+                        />
+                     </li>
+                     <li><Form.Check 
+                          type="switch"
+                          id="custom-switch-26"
+                          label="Lacto vegetarian"
+                        />
+                     </li>
+                     <li>
+                        <Form.Check 
+                          type="switch"
+                          id="custom-switch-27"
+                          label="Vegam"
+                        />
+                     </li>
+                  </Form>
+               </ul>
+            </li>            
+         </ul>
+      </div>
+</>
+     
     )
 }
 
