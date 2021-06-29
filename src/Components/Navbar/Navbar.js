@@ -5,31 +5,26 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
+import { useDispatch } from 'react-redux'
+import { OpenSingleMeal } from '../../redux/actions.js'
+import { Link } from 'react-router-dom'
 
 function NavMenu() {
 
-  const toggleDropdown =(e)=>{
-    
-  }
-    return (
+   const dispatch = useDispatch()
 
-     /*   <div id="sidebar-wrapper">
-        <div>Brand</div>
-        <hr></hr>
-        <div>Filters</div>
-        <div>filter1</div>
-        <div>filter2</div>
-        <div>filter3</div>
-        
-        <div>filter1</div>
-        <div>filter2</div>
-        <div>filter3</div>
-        
-        <div>filter1</div>
-        <div>filter2</div>
-        <div>filter3</div>
-       </div>h1
- */
+   const GetRandomMeal=()=>{
+   fetch('https://api.spoonacular.com/recipes/random?&apiKey=28087beca5d243b28544ddf2484ea4ac')
+   .then(res =>{
+      let data = res.json()
+      return data
+   })
+   .then(data =>{
+      dispatch(OpenSingleMeal(data.recipes[0]))
+      console.log(data)
+   })
+   }
+    return (
 <>
 <nav className="navbar navbar-default no-margin">
       
@@ -45,7 +40,9 @@ function NavMenu() {
       <div id="sidebar-wrapper">
          <ul className="sidebar-nav nav-pills nav-stacked" id="menu">
          <li className="mt-3">
-               <a href="#"> <span className="fa-stack fa-lg pull-left"><i className="fa fa-random fa-stack-1x "></i></span>Random meal</a>
+            <Link to="/single-meal">
+               <a href="#" onClick={()=>GetRandomMeal()}> <span className="fa-stack fa-lg pull-left"><i className="fa fa-random fa-stack-1x "></i></span>Random meal</a>
+            </Link>
             </li>
             <hr></hr>
             <li className="active">
@@ -251,7 +248,7 @@ function NavMenu() {
                         <Form.Check 
                           type="switch"
                           id="custom-switch-27"
-                          label="Vegam"
+                          label="Vegan"
                         />
                      </li>
                   </Form>

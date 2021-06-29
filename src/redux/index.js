@@ -24,9 +24,14 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 singleMeal: action.payload
             };
+        case 'RANDOM_MEAL':
+            return state ={
+                ...state.data,
+                singleMeal: action.payload
+            };
         default:
             return state
     }
 }
 
-export const store = createStore(reducer)
+export const store = createStore(reducer,  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
