@@ -7,11 +7,12 @@ import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import { useDispatch } from 'react-redux'
 import { OpenSingleMeal } from '../../redux/actions.js'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router'
 
 function NavMenu() {
 
    const dispatch = useDispatch()
+   const history = useHistory()
 
    const GetRandomMeal=()=>{
    fetch('https://api.spoonacular.com/recipes/random?&apiKey=28087beca5d243b28544ddf2484ea4ac')
@@ -21,7 +22,7 @@ function NavMenu() {
    })
    .then(data =>{
       dispatch(OpenSingleMeal(data.recipes[0]))
-      console.log(data)
+      history.push(`/single-meal/${data.recipes[0].id}`)
    })
    }
     return (
@@ -40,9 +41,7 @@ function NavMenu() {
       <div id="sidebar-wrapper">
          <ul className="sidebar-nav nav-pills nav-stacked" id="menu">
          <li className="mt-3">
-            <Link to="/single-meal">
                <a href="#" onClick={()=>GetRandomMeal()}> <span className="fa-stack fa-lg pull-left"><i className="fa fa-random fa-stack-1x "></i></span>Random meal</a>
-            </Link>
             </li>
             <hr></hr>
             <li className="active">

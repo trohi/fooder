@@ -3,6 +3,10 @@
     background:rgba(0, 0, 0, 0.5)
 }
 
+.backButton{
+    float:left
+}
+
 .mealIngredients, .mealSummary, .mealInstructions{
     line-height: 180%;
     font-size:20px;

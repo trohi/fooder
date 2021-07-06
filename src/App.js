@@ -2,8 +2,7 @@ import HomePage from './Pages/Home'
 import Cuisine from './Pages/Cuisine'
 import SingleMeal from './Pages/SingleMeal'
 import NavMenu from './Components/Navbar/Navbar'
-import { BrowserRouter as Router, Switch, Link, Route } from 'react-router-dom'
-import { useEffect } from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
 
 function App() {
@@ -28,10 +27,10 @@ function App() {
           <Route exact path="/">
             <HomePage></HomePage>
           </Route>
-          <Route path="/cuisine">
+          <Route path="/cuisine/:type">
             <Cuisine></Cuisine>
           </Route>
-          <Route path="/single-meal">
+          <Route path={`/single-meal/:id`}>
             <SingleMeal></SingleMeal>
           </Route>
         </Switch>

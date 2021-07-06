@@ -1,3 +1,7 @@
+.backButton i{
+    line-height: 0px !important;
+}
+
 .list-group-item{
     height:15vh;
     padding-top:5vh !important;

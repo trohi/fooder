@@ -6,12 +6,23 @@ import Accordition from 'react-bootstrap/Accordion'
 import Badge from 'react-bootstrap/Badge'
 import { Clock, Person, ArrowRight } from 'react-bootstrap-icons'
 import { useSelector } from 'react-redux'
+import {useLocation, useHistory} from 'react-router'
 
 function SingleMealComponent(){
+
     const meal = useSelector(state => state.singleMeal)
+    const location = useLocation()
+    const history = useHistory()
+
+    const goBackHandle = () => {
+        history.goBack()
+    }
 
     return (
         <>
+        <Col xs={12} md={12} className="my-md-5-md-5 mt-md-5">
+        <Button variant="dark" className="backButton" onClick={()=>goBackHandle()}> <span className="fa-stack fa-md"><i className="fa fa-long-arrow-left fa-stack-2x" ></i></span> </Button>
+        </Col>
         <Col xs={12} md={6} id="singleMealCol" className="my-md-4 ml-md-5">
             <h4 className="mt-5">{meal.title}</h4>
             <p>Ready in {meal.readyInMinutes} minutes <Clock className="clockIcon"></Clock><br></br> Servings for {meal.servings} <Person className="personIcon"></Person></p>
