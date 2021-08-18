@@ -20,7 +20,7 @@ function SingleMealComponent(){
 
     return (
         <>
-        <Col xs={12} md={12} className="my-md-5-md-5 mt-md-5">
+        <Col xs={12} md={12} className="my-md-5 my-xs-0 mt-md-5">
         <Button variant="dark" className="backButton" onClick={()=>goBackHandle()}> <span className="fa-stack fa-md"><i className="fa fa-long-arrow-left fa-stack-2x" ></i></span> </Button>
         </Col>
         <Col xs={12} md={6} id="singleMealCol" className="my-md-4 ml-md-5">

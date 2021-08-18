@@ -127,19 +127,25 @@
     color:#fff;
     border-left: none;
  }
+
+ .special-a-2{
+   color:#fff;
+   cursor:default;
+   background: rgba(255, 255, 255, 0.2);
+ }
  
- .sidebar-nav li a:hover{
+ .sidebar-nav li .special-a:hover{
     text-decoration: none;
     color: #fff;
     background: rgba(255, 255, 255, 0.2);
-    border-left: red 2px solid;
+    border-left: green 2px solid;
  }
 
  .custom-switch:hover{
    text-decoration: none;
    color: #fff;
    background: rgba(255, 255, 255, 0.2);
-   border-left: red 2px solid;
+   border-left: green 2px solid;
  }
  
  .sidebar-nav li a:active,
@@ -214,5 +220,16 @@
        -o-transition: all 0.5s ease;
        transition: all 0.5s ease;
        width: auto;
+    }
+    .apply-button{
+       display:block;
+       width:80%;
+       border-radius:5px;
+       background-color: green;
+       color:white;
+       border: 0px solid
+    }
+    .apply-button:hover{
+       transform: scale(1.1);
     }
  }
