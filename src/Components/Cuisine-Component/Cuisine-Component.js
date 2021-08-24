@@ -11,13 +11,8 @@ import { OpenSingleMeal, Loading } from '../../redux/actions.js'
 function CuisineComponent(){
     const dispatch = useDispatch()
     const data = useSelector(state => state.data)
-    console.log(data)
 
-    const location = useLocation()
-    
     const history = useHistory()
-
-    const { url } = useRouteMatch()
 
     const goBackHandle = () =>{
         history.goBack()
@@ -25,8 +20,6 @@ function CuisineComponent(){
 
     const getSingleMeal = (payload) =>{
         const id = payload.id
-        
-        console.log(id, payload.title )
 
         dispatch(Loading())
         fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=28087beca5d243b28544ddf2484ea4ac`)

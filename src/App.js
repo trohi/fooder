@@ -1,7 +1,6 @@
 import HomePage from './Pages/Home'
 import Cuisine from './Pages/Cuisine'
 import SingleMeal from './Pages/SingleMeal'
-import NavMenu from './Components/Navbar/Navbar'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
 
@@ -28,6 +27,9 @@ function App() {
             <HomePage></HomePage>
           </Route>
           <Route path="/cuisine/:type">
+            <Cuisine></Cuisine>
+          </Route>
+          <Route path="/filtered-meals">
             <Cuisine></Cuisine>
           </Route>
           <Route path={`/single-meal/:id`}>

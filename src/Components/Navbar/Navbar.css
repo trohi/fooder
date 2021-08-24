@@ -162,6 +162,42 @@
  .sidebar-nav > .sidebar-brand a {
     color: #999999;
  }
+
+ .random-button{
+   display:block;
+   width: 80%;
+   padding-left:10%;
+   margin-left:10%;
+   margin-right: auto;
+   border: none;
+   border-radius: 5px;
+   background-color:rgba(175, 170, 170, 0.9)
+}
+
+.random-button:hover{
+   transform:scale(1.1)
+}
+
+.random-button:hover .fa-random{
+   transform:scale(1.1);
+}
+
+.fa-random{
+   padding-right:50%
+}
+
+.apply-button{
+   display:block;
+   width:80%;
+   border-radius:5px;
+   background-color: green;
+   color:white;
+   border: none
+}
+
+.apply-button:hover{
+   transform: scale(1.1);
+}
  
  .sidebar-nav > .sidebar-brand a:hover {
     color: #fff;
@@ -180,24 +216,31 @@
     #wrapper {
        padding-left: 250px;
     }
+
     .fixed-brand {
        width: 250px;
     }
+
     #wrapper.toggled {
        padding-left: 0;
     }
+
     #sidebar-wrapper {
        width: 250px;
     }
+
     #wrapper.toggled #sidebar-wrapper {
        width: 250px;
     }
+
     #wrapper.toggled-2 #sidebar-wrapper {
        width: 50px;
     }
+
     #wrapper.toggled-2 #sidebar-wrapper:hover {
        width: 250px;
     }
+
     #page-content-wrapper {
        padding: 20px;
        position: relative;
@@ -206,11 +249,13 @@
        -o-transition: all 0.5s ease;
        transition: all 0.5s ease;
     }
+
     #wrapper.toggled #page-content-wrapper {
        position: relative;
        margin-right: 0;
        padding-left: 250px;
     }
+
     #wrapper.toggled-2 #page-content-wrapper {
        position: relative;
        margin-right: 0;
@@ -220,16 +265,5 @@
        -o-transition: all 0.5s ease;
        transition: all 0.5s ease;
        width: auto;
-    }
-    .apply-button{
-       display:block;
-       width:80%;
-       border-radius:5px;
-       background-color: green;
-       color:white;
-       border: 0px solid
-    }
-    .apply-button:hover{
-       transform: scale(1.1);
     }
  }

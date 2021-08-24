@@ -30,6 +30,7 @@
     visibility: hidden;  
 }
 
+
 @media only screen and (max-width:400px) {
     .list-group-item{
         background: rgb(0, 0, 0, 0.6) !important;

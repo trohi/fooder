@@ -1,18 +1,13 @@
 import './Navbar.css'
-import  Navbar  from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
 import Form from 'react-bootstrap/Form'
-import FormControl from 'react-bootstrap/FormControl'
-import Button from 'react-bootstrap/Button'
 import { useDispatch } from 'react-redux'
-import { OpenSingleMeal } from '../../redux/actions.js'
+import { Loading, OpenSingleMeal, LoadData } from '../../redux/actions.js'
 import { useHistory } from 'react-router'
 import { useState } from 'react'
 
 function NavMenu() {
 
-   const [filters, setType] = useState({});
+   const [mealType, setType] = useState({});
    const [diet, setDiet] = useState([])
    const [intolerances, setIntolerances] = useState([])
 
@@ -36,19 +31,36 @@ function NavMenu() {
 
    const handleIntolerancesEvent = (event) =>{
       const target = event.target
-      const checked = target.checked
       const name = target.name
       setIntolerances([...intolerances, name])
    }
 
    const handleDietEvent = (event) =>{
       const target = event.target
-      const checked = target.checked
       const name = target.name
       setDiet([...diet, name])
    }
 
+   const handleApplymealTypeEvent = (payload) =>{
+      dispatch(Loading())
+      fetch(`https://api.spoonacular.com/recipes/complexSearch?intolerances=${[...payload.intolerances]}&diet=${[...payload.diet]}&type=${payload.mealType.type}&apiKey=28087beca5d243b28544ddf2484ea4ac`)
+      .then(res =>{
+         let data = res.json()
+         return data
+      })
+      .then(data=>{
+         dispatch(LoadData(data.results))
+         history.push('/filtered-meals')
+         dispatch(Loading())
+      })
+      .catch(error =>{
+         console.log(error.message)
+         dispatch(Loading())
+      })
+   }
+
    const GetRandomMeal=()=>{
+   dispatch(Loading())
    fetch('https://api.spoonacular.com/recipes/random?&apiKey=28087beca5d243b28544ddf2484ea4ac')
    .then(res =>{
       let data = res.json()
@@ -57,6 +69,11 @@ function NavMenu() {
    .then(data =>{
       dispatch(OpenSingleMeal(data.recipes[0]))
       history.push(`/single-meal/${data.recipes[0].id}`)
+      dispatch(Loading())
+   })
+   .catch(error =>{
+      console.log(error.message)
+      dispatch(Loading())
    })
    }
     return (
@@ -73,10 +90,9 @@ function NavMenu() {
    </nav> 
       <div id="sidebar-wrapper">
          <ul className="sidebar-nav nav-pills nav-stacked" id="menu">
-         <li className="mt-3">
-               <a href="#" onClick={()=>GetRandomMeal()}> <span className="fa-stack fa-lg pull-left"><i className="fa fa-random fa-stack-1x "></i></span>Random meal</a>
+            <li className="mt-3">
+               <button className="random-button" onClick={()=>GetRandomMeal()}><i className="fa fa-random fa-stack-1x"></i>Random</button>
             </li>
-            <button onClick={()=>{console.log(filters, intolerances, diet)}}>Click to show state</button>
             <hr></hr>
             <li className="active">
               <div className="sidebar-header">Filters</div>
@@ -90,7 +106,7 @@ function NavMenu() {
                        label="Main course"
                        name="main-course"
                        onChange={handleMealTypeEvent}
-                       disabled={Object.keys(filters).length > 0 && filters.type !== 'main-course'}
+                       disabled={Object.keys(mealType).length > 0 && mealType.type !== 'main-course'}
                      />
                   </li>
                   <li>
@@ -100,7 +116,7 @@ function NavMenu() {
                        label="Dessert"
                        name="dessert"
                        onChange={handleMealTypeEvent}
-                       disabled={Object.keys(filters).length > 0 && filters.type !== 'dessert'}
+                       disabled={Object.keys(mealType).length > 0 && mealType.type !== 'dessert'}
                      />
                   </li>
                   <li>
@@ -110,7 +126,7 @@ function NavMenu() {
                        name="appetizer"
                        label="Appetizer"
                        onChange={handleMealTypeEvent}
-                       disabled={Object.keys(filters).length > 0 && filters.type !== 'appetizer'}
+                       disabled={Object.keys(mealType).length > 0 && mealType.type !== 'appetizer'}
                      />
                   </li>
                   <li>
@@ -120,7 +136,7 @@ function NavMenu() {
                        name="salad"
                        label="Salad"
                        onChange={handleMealTypeEvent}
-                       disabled={Object.keys(filters).length > 0 && filters.type !== 'salad'}
+                       disabled={Object.keys(mealType).length > 0 && mealType.type !== 'salad'}
                      />
                   </li>
                   <li>
@@ -130,7 +146,7 @@ function NavMenu() {
                        name="bread"
                        label="Bread"
                        onChange={handleMealTypeEvent}
-                       disabled={Object.keys(filters).length > 0 && filters.type !== 'bread'}
+                       disabled={Object.keys(mealType).length > 0 && mealType.type !== 'bread'}
                      />
                   </li>
                   <li>
@@ -140,7 +156,7 @@ function NavMenu() {
                        name="breakfast"
                        label="Breakfast"
                        onChange={handleMealTypeEvent}
-                       disabled={Object.keys(filters).length > 0 && filters.type !== 'breakfast'}
+                       disabled={Object.keys(mealType).length > 0 && mealType.type !== 'breakfast'}
                      />
                   </li>
                   <li>
@@ -150,7 +166,7 @@ function NavMenu() {
                        name="soup"
                        label="Soup"
                        onChange={handleMealTypeEvent}
-                       disabled={Object.keys(filters).length > 0 && filters.type !== 'soup'}
+                       disabled={Object.keys(mealType).length > 0 && mealType.type !== 'soup'}
                      />
                   </li>
                   <li>
@@ -160,7 +176,7 @@ function NavMenu() {
                        name="souce"
                        label="Souce"
                        onChange={handleMealTypeEvent}
-                       disabled={Object.keys(filters).length > 0 && filters.type !== 'souce'}
+                       disabled={Object.keys(mealType).length > 0 && mealType.type !== 'souce'}
                      />
                   </li>
                   <li>
@@ -170,7 +186,7 @@ function NavMenu() {
                        name="marinade"
                        label="Marinade"
                        onChange={handleMealTypeEvent}
-                       disabled={Object.keys(filters).length > 0 && filters.type !== 'marinade'}
+                       disabled={Object.keys(mealType).length > 0 && mealType.type !== 'marinade'}
                      />
                   </li>
                   </Form>
@@ -349,7 +365,7 @@ function NavMenu() {
                      </li>
                   </Form>
                   <hr className="ml-n5"></hr>
-                  <button className="apply-button mb-5 mt-4">Apply filters</button>
+                  <button className="apply-button mb-5 mt-4" onClick={()=>{handleApplymealTypeEvent({mealType, intolerances, diet})}}>Apply filters</button>
                </ul>
             </li>            
          </ul>

@@ -3,15 +3,13 @@ import parse from 'html-react-parser'
 import Col from 'react-bootstrap/Col'                 
 import Button from 'react-bootstrap/Button'           
 import Accordition from 'react-bootstrap/Accordion'
-import Badge from 'react-bootstrap/Badge'
-import { Clock, Person, ArrowRight } from 'react-bootstrap-icons'
+import { Clock, Person } from 'react-bootstrap-icons'
 import { useSelector } from 'react-redux'
-import {useLocation, useHistory} from 'react-router'
+import { useHistory} from 'react-router'
 
 function SingleMealComponent(){
 
     const meal = useSelector(state => state.singleMeal)
-    const location = useLocation()
     const history = useHistory()
 
     const goBackHandle = () => {
