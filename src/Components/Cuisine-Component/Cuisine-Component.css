@@ -1,3 +1,7 @@
+.backButtonWrapper{
+    background:transparent
+}
+
 .backButton i{
     line-height: 0px !important;
 }

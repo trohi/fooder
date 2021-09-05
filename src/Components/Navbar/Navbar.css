@@ -228,9 +228,6 @@
  }
  
  @media(min-width:870px) {
-    /* #wrapper {
-       padding-left: 250px;
-    } */
 
     .fixed-brand {
        width: 250px;
@@ -243,18 +240,6 @@
     #sidebar-wrapper {
        width: 250px;
     }
-/* 
-    #wrapper.toggled #sidebar-wrapper {
-       width: 250px;
-    }
-
-    #wrapper.toggled-2 #sidebar-wrapper {
-       width: 50px;
-    }
-
-    #wrapper.toggled-2 #sidebar-wrapper:hover {
-       width: 250px;
-    } */
 
     #page-content-wrapper {
        padding: 20px;
@@ -292,7 +277,7 @@
 
    .ToBe{
      position:fixed;
-     top: 96vh;
+     top: 96%;
      left: 50vw;
      margin-left:auto;
      margin-right: auto;
@@ -336,7 +321,9 @@
 
    #sidebar-wrapper{
      z-index: 1;
-     position: absolute;
+     /* position: absolute; */
+     position:fixed;
+     height: 100%;
      overflow: scroll;
      display: flex;
      justify-content: center;
