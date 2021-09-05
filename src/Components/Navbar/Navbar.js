@@ -80,23 +80,12 @@ function NavMenu() {
 
    //TESTING FUNCTION
    const openSidebarOnMobile =()=>{
-      const clientsViewportWidth = document.documentElement.clientWidth
       console.log('fired')
       if(sidebar){
          setSidebar(false)
       } else{
          setSidebar(true)
       }
-      /* if(clientsViewportWidth > 800){
-         console.log("clients screen size is more than 800px")
-         return
-      } else if(clientsViewportWidth < 800 && sidebar === true) {
-         console.log('clients screen size is under 800px and sidebar is true')
-         setSidebar(false)
-      } else {
-         console.log('clients screen size is less than 800px and sidebar is ffalse')
-         setSidebar(true)
-      } */
    }
 
     return (
@@ -105,8 +94,7 @@ function NavMenu() {
    <input type="checkbox" id="hiddenInput" onClick={openSidebarOnMobile} />
     <label className="ToBe" for="hiddenInput">
       <div></div>
-    </label>{/* 
-<i className="fa fa-bars filterIcon"></i> */}
+    </label>
       <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
          <ul className="nav navbar-nav">
             <li className="active">
