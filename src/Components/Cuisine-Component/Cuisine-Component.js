@@ -40,7 +40,7 @@ function CuisineComponent(){
 
     return (
         <Row>
-            <Col xs={12} md={12} className="my-md-5-md-5 mt-md-5">
+            <Col xs={12} md={12} className="my-md-4 my-sm-3 mt-xs-4">
               <Button variant="dark" className="backButton" onClick={()=>goBackHandle()}> <span className="fa-stack fa-md"><i className="fa fa-long-arrow-left fa-stack-2x" ></i></span> </Button>
             </Col>
             <Col md={5}>

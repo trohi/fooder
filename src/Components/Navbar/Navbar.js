@@ -78,7 +78,6 @@ function NavMenu() {
    })
    }
 
-   //TESTING FUNCTION
    const openSidebarOnMobile =()=>{
       console.log('fired')
       if(sidebar){
