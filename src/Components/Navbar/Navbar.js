@@ -10,6 +10,7 @@ function NavMenu() {
    const [mealType, setType] = useState({});
    const [diet, setDiet] = useState([])
    const [intolerances, setIntolerances] = useState([])
+   const [sidebar, setSidebar] = useState(false)
 
    const dispatch = useDispatch()
    const history = useHistory()
@@ -76,19 +77,46 @@ function NavMenu() {
       dispatch(Loading())
    })
    }
+
+   //TESTING FUNCTION
+   const openSidebarOnMobile =()=>{
+      const clientsViewportWidth = document.documentElement.clientWidth
+      console.log('fired')
+      if(sidebar){
+         setSidebar(false)
+      } else{
+         setSidebar(true)
+      }
+      /* if(clientsViewportWidth > 800){
+         console.log("clients screen size is more than 800px")
+         return
+      } else if(clientsViewportWidth < 800 && sidebar === true) {
+         console.log('clients screen size is under 800px and sidebar is true')
+         setSidebar(false)
+      } else {
+         console.log('clients screen size is less than 800px and sidebar is ffalse')
+         setSidebar(true)
+      } */
+   }
+
     return (
 <>
-<nav className="navbar navbar-default no-margin">
+<nav className="navbar navbar-default no-margin" >
+   <input type="checkbox" id="hiddenInput" onClick={openSidebarOnMobile} />
+    <label className="ToBe" for="hiddenInput">
+      <div></div>
+    </label>{/* 
+<i className="fa fa-bars filterIcon"></i> */}
       <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
          <ul className="nav navbar-nav">
             <li className="active">
-               <button className="navbar-toggle collapse in" className="glyphicon glyphicon-th-large" aria-hidden="true">
+               <button className="navbar-toggle collapse in glyphicon glyphicon-th-large" aria-hidden="true">
                </button>
             </li>
          </ul>
       </div>
    </nav> 
-      <div id="sidebar-wrapper">
+      <div id="sidebar-wrapper" className={ sidebar ? 'openNav' : 'closeNav'}>
          <ul className="sidebar-nav nav-pills nav-stacked" id="menu">
             <li className="mt-3">
                <button className="random-button" onClick={()=>GetRandomMeal()}><i className="fa fa-random fa-stack-1x"></i>Random</button>
@@ -96,7 +124,7 @@ function NavMenu() {
             <hr></hr>
             <li className="active">
               <div className="sidebar-header">Filters</div>
-               <a className="special-a-2 mt-3 mb-2" href="#"><span className="fa-stack fa-lg pull-left"><i className="fa fa-th-list fa-stack-1x "></i></span>Type</a>
+               <div className="special-div mt-3 mb-2"><span className="fa-stack fa-lg pull-left"><i className="fa fa-th-list fa-stack-1x "></i></span>Type</div>
                <ul className="nav-pills nav-stacked" >
                <Form>
                   <li>
@@ -193,7 +221,7 @@ function NavMenu() {
                </ul>
             </li>
             <li>
-               <a className="special-a-2 mt-3 mb-2" href="#"><span className="fa-stack fa-lg pull-left"><i className="fa fa-asterisk fa-stack-1x "></i></span>Intolerances</a>
+               <div className="special-div mt-3 mb-2"><span className="fa-stack fa-lg pull-left"><i className="fa fa-asterisk fa-stack-1x "></i></span>Intolerances</div>
                <ul className="nav-pills nav-stacked">
                   <Form>
                      <li>
@@ -307,7 +335,7 @@ function NavMenu() {
                </ul>
             </li>
             <li>
-               <a className="special-a-2 mt-3 mb-2" href="#"><span className="fa-stack fa-lg pull-left"><i className="fa fa-hand-stop-o fa-stack-1x "></i></span>Diet</a>
+               <div className="special-div mt-3 mb-2"><span className="fa-stack fa-lg pull-left"><i className="fa fa-hand-stop-o fa-stack-1x "></i></span>Diet</div>
                <ul className="nav-pills nav-stacked">
                   <Form >
                      <li>

@@ -2,29 +2,25 @@ import './Modal.css'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import ListGroup from 'react-bootstrap/ListGroup'
 import FormControl from 'react-bootstrap/FormControl'
-import Badge from 'react-bootstrap/Badge'
 import { Search } from 'react-bootstrap-icons'
-import { useDispatch } from 'react-redux'
 import { useState } from 'react'
 
 function ModalComponent(){
-    const dispatch = useDispatch()
 
-    const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handleClick = (event) =>{
+  /* const handleClick = (event) =>{
     event.stopPropagation()
      if(event.target.style.backgroundColor !== "green"){
       event.target.style.backgroundColor="green"
     } else {
       event.target.style.backgroundColor="#6c757d"
     } 
-  }
+  } */
 
     return(
         <>

@@ -1,14 +1,9 @@
 import './GridView.css'
 import Card from 'react-bootstrap/Card'
-import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Badge from 'react-bootstrap/Badge'
-import Button from 'react-bootstrap/Button'
-import { Search } from 'react-bootstrap-icons'
 
 import NavMenu from '../Navbar/Navbar'
-import ModalComponent from '../Modal/Modal.js'
 import { Link } from 'react-router-dom'
 import { Loading, LoadData } from '../../redux/actions.js'
 import LoadingComponent from '../LoadingIcon/loading'
@@ -49,7 +44,7 @@ function GridView(){
 
     return(
         isLoading ? <LoadingComponent></LoadingComponent> :
-        <Row className="ml-md-5 mr-md-4">
+        <Row className="ml-md-5 mr-xs-4">
             <NavMenu></NavMenu>{/* 
             <ModalComponent></ModalComponent> */}
             <Col xs={12}>

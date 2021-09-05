@@ -4,8 +4,8 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import ListGroup from 'react-bootstrap/ListGroup'
 import { useSelector, useDispatch } from 'react-redux'
-import { Link, useRouteMatch } from 'react-router-dom'
-import { useLocation, useHistory } from 'react-router'
+import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router'
 import { OpenSingleMeal, Loading } from '../../redux/actions.js'
 
 function CuisineComponent(){

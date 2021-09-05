@@ -25,7 +25,7 @@ function SingleMealComponent(){
             <h4 className="mt-5">{meal.title}</h4>
             <p>Ready in {meal.readyInMinutes} minutes <Clock className="clockIcon"></Clock><br></br> Servings for {meal.servings} <Person className="personIcon"></Person></p>
             <div className="mb-3">
-                        <img className="mealImage" src={meal.image}></img>
+                        <img className="mealImage" alt="meal" src={meal.image}></img>
                     </div>
             <Accordition defaultActiveKey="1">
             <Accordition.Toggle as={Button} eventKey="1" variant="outline-light" className="my-3">Summary</Accordition.Toggle>
