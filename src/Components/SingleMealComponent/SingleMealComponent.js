@@ -27,8 +27,8 @@ function SingleMealComponent(){
             <div className="mb-3">
                         <img className="mealImage" alt="meal" src={meal.image}></img>
                     </div>
-            <Accordition defaultActiveKey="1">
-            <Accordition.Toggle as={Button} eventKey="1" variant="outline-light" className="my-3">Summary</Accordition.Toggle>
+            <Accordition defaultActiveKey="1" multiple>
+            <Accordition.Toggle as={Button} eventKey="1" variant="outline-light" className="my-3" id="accordition1">Summary</Accordition.Toggle>
                 <Accordition.Collapse eventKey="1">
                     <div className="mealSummary">
                         {
@@ -36,10 +36,10 @@ function SingleMealComponent(){
                         }
                     </div>
                 </Accordition.Collapse>
-                <hr></hr>
-                <Accordition.Toggle as={Button} eventKey="0" variant="outline-light" className="my-3" >Ingredients</Accordition.Toggle>
-                <Accordition.Collapse eventKey="0">
-                    <div className="mealIngredients">
+                <hr i></hr>
+                <Accordition.Toggle as={Button} eventKey="0" variant="outline-light" className="my-3" id="accordition0"><a href="#accordition1" className="scroll-a">Ingredients</a></Accordition.Toggle>
+                <Accordition.Collapse eventKey="0" >
+                    <div className="mealIngredients" >
                         <ul>
                             {
                              meal.extendedIngredients ?  meal.extendedIngredients.map((ingredient,index)=>{
@@ -50,7 +50,7 @@ function SingleMealComponent(){
                     </div>
                 </Accordition.Collapse>
                 <hr></hr>
-                 <Accordition.Toggle as={Button} eventKey="3" variant="outline-light" className="my-3">Instructions</Accordition.Toggle>
+                 <Accordition.Toggle as={Button} eventKey="3" variant="outline-light" className="my-3"><a className="scroll-a" href="#accordition0">Instructions</a></Accordition.Toggle>
                 <Accordition.Collapse eventKey="3" data-parent="#" >
                     <div className="mealInstructions">
                         {
