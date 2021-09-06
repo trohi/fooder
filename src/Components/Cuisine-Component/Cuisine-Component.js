@@ -41,7 +41,11 @@ function CuisineComponent(){
     return (
         <Row>
             <Col xs={12} md={12} className="my-md-4 my-sm-3 mt-xs-4 backButtonWrapper">
-              <Button variant="dark" className="backButton" onClick={()=>goBackHandle()}> <span className="fa-stack fa-md"><i className="fa fa-long-arrow-left fa-stack-2x" ></i></span> </Button>
+                <Button variant="dark" className="backButton" onClick={()=>goBackHandle()}>
+                   <span className="fa-stack fa-md">
+                       <i className="fa fa-long-arrow-left fa-stack-2x" ></i>
+                    </span> 
+                </Button>
             </Col>
             <Col md={5}>
                 <ListGroup className="mt-md-5 ml-md-5">

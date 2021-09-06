@@ -16,17 +16,31 @@ function SingleMealComponent(){
         history.goBack()
     }
 
+    const handleScroll = (id) => {
+        const target = document.getElementById(id)
+        target.scrollIntoView()
+    }
+
     return (
         <>
-        <Col xs={12} md={12} className="my-md-5 my-xs-0 mt-md-5">
-        <Button variant="dark" className="backButton" onClick={()=>goBackHandle()}> <span className="fa-stack fa-md"><i className="fa fa-long-arrow-left fa-stack-2x" ></i></span> </Button>
+        <Col xs={12} md={12} className="my-md-5 my-xs-0 mt-md-5 backButtonWrapper">
+            <Button variant="dark" className="backButton" onClick={()=>goBackHandle()}>
+                <span className="fa-stack fa-md">
+                    <i className="fa fa-long-arrow-left fa-stack-2x" ></i>
+                </span>
+            </Button>
         </Col>
         <Col xs={12} md={6} id="singleMealCol" className="my-md-4 ml-md-5">
             <h4 className="mt-5">{meal.title}</h4>
-            <p>Ready in {meal.readyInMinutes} minutes <Clock className="clockIcon"></Clock><br></br> Servings for {meal.servings} <Person className="personIcon"></Person></p>
+            <p>Ready in {meal.readyInMinutes} minutes
+                <Clock className="clockIcon"></Clock>
+                <br></br> 
+                Servings for {meal.servings} 
+                <Person className="personIcon"></Person>
+            </p>
             <div className="mb-3">
-                        <img className="mealImage" alt="meal" src={meal.image}></img>
-                    </div>
+                <img className="mealImage" alt="meal" src={meal.image}></img>
+            </div>
             <Accordition defaultActiveKey="1" multiple>
             <Accordition.Toggle as={Button} eventKey="1" variant="outline-light" className="my-3" id="accordition1">Summary</Accordition.Toggle>
                 <Accordition.Collapse eventKey="1">
@@ -37,7 +51,9 @@ function SingleMealComponent(){
                     </div>
                 </Accordition.Collapse>
                 <hr i></hr>
-                <Accordition.Toggle as={Button} eventKey="0" variant="outline-light" className="my-3" id="accordition0"><a href="#accordition1" className="scroll-a">Ingredients</a></Accordition.Toggle>
+                <Accordition.Toggle as={Button} eventKey="0" variant="outline-light" className="my-3" id="accordition0" onClick={()=>handleScroll('accordition1')}>
+                    Ingredients
+                </Accordition.Toggle>
                 <Accordition.Collapse eventKey="0" >
                     <div className="mealIngredients" >
                         <ul>
@@ -50,7 +66,9 @@ function SingleMealComponent(){
                     </div>
                 </Accordition.Collapse>
                 <hr></hr>
-                 <Accordition.Toggle as={Button} eventKey="3" variant="outline-light" className="my-3"><a className="scroll-a" href="#accordition0">Instructions</a></Accordition.Toggle>
+                    <Accordition.Toggle as={Button} eventKey="3" variant="outline-light" className="my-3" onClick={()=>handleScroll('accordition0')}>
+                        Instructions
+                    </Accordition.Toggle>
                 <Accordition.Collapse eventKey="3" data-parent="#" >
                     <div className="mealInstructions">
                         {

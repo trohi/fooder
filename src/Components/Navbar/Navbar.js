@@ -91,7 +91,7 @@ function NavMenu() {
 <>
 <nav className="navbar navbar-default no-margin" >
    <input type="checkbox" id="hiddenInput" onClick={openSidebarOnMobile} />
-    <label className="ToBe" for="hiddenInput">
+      <label className="ToBe" for="hiddenInput">
       <div></div>
     </label>
       <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -106,12 +106,20 @@ function NavMenu() {
       <div id="sidebar-wrapper" className={ sidebar ? 'openNav' : 'closeNav'}>
          <ul className="sidebar-nav nav-pills nav-stacked" id="menu">
             <li className="mt-3">
-               <button className="random-button" onClick={()=>GetRandomMeal()}><i className="fa fa-random fa-stack-1x"></i>Random</button>
+               <button className="random-button" onClick={()=>GetRandomMeal()}>
+                  <i className="fa fa-random fa-stack-1x"></i>
+                     Random
+               </button>
             </li>
             <hr></hr>
             <li className="active">
               <div className="sidebar-header">Filters</div>
-               <div className="special-div mt-3 mb-2"><span className="fa-stack fa-lg pull-left"><i className="fa fa-th-list fa-stack-1x "></i></span>Type</div>
+               <div className="special-div mt-3 mb-2">
+                  <span className="fa-stack fa-lg pull-left">
+                     <i className="fa fa-th-list fa-stack-1x "></i>
+                  </span>
+                  Type
+               </div>
                <ul className="nav-pills nav-stacked" >
                <Form>
                   <li>
@@ -208,7 +216,12 @@ function NavMenu() {
                </ul>
             </li>
             <li>
-               <div className="special-div mt-3 mb-2"><span className="fa-stack fa-lg pull-left"><i className="fa fa-asterisk fa-stack-1x "></i></span>Intolerances</div>
+               <div className="special-div mt-3 mb-2">
+                  <span className="fa-stack fa-lg pull-left">
+                     <i className="fa fa-asterisk fa-stack-1x "></i>
+                  </span>
+                  Intolerances
+               </div>
                <ul className="nav-pills nav-stacked">
                   <Form>
                      <li>
@@ -322,7 +335,12 @@ function NavMenu() {
                </ul>
             </li>
             <li>
-               <div className="special-div mt-3 mb-2"><span className="fa-stack fa-lg pull-left"><i className="fa fa-hand-stop-o fa-stack-1x "></i></span>Diet</div>
+               <div className="special-div mt-3 mb-2">
+                  <span className="fa-stack fa-lg pull-left">
+                     <i className="fa fa-hand-stop-o fa-stack-1x "></i>
+                  </span>
+                  Diet
+               </div>
                <ul className="nav-pills nav-stacked">
                   <Form >
                      <li>
@@ -380,7 +398,11 @@ function NavMenu() {
                      </li>
                   </Form>
                   <hr className="ml-n5"></hr>
-                  <button className="apply-button mb-5 mt-4" onClick={()=>{handleApplymealTypeEvent({mealType, intolerances, diet})}}>Apply filters</button>
+                  <button 
+                  className="apply-button mb-5 mt-4" 
+                  onClick={()=>{handleApplymealTypeEvent({mealType, intolerances, diet})}}>
+                     Apply filters
+                  </button>
                </ul>
             </li>            
          </ul>

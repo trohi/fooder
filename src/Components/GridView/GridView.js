@@ -45,8 +45,7 @@ function GridView(){
     return(
         isLoading ? <LoadingComponent></LoadingComponent> :
         <Row className="ml-md-5 mr-xs-4">
-            <NavMenu></NavMenu>{/* 
-            <ModalComponent></ModalComponent> */}
+            <NavMenu></NavMenu>
             <Col xs={12}>
             </Col>
             <Col xs={12} className="my-5 heading-paragraph">
@@ -101,7 +100,7 @@ function GridView(){
                     </Card>
                 </Link>
             </Col>
-            <Col xs={12} md={4} className="mt-3 mb-5">
+            <Col xs={12} md={4} className="mt-md-3 mb-md-5">
                 <Link to={ {pathname:"/cuisine/thai", state:{from:'root'}}} onClick={()=>GetData('Thai')}>
                     <Card className="grid-card mx-auto">
                         <Card.Img variant="top" src={thaiCuisineImg}></Card.Img>
@@ -109,7 +108,7 @@ function GridView(){
                     </Card>
                 </Link>
             </Col>
-            <Col xs={12} md={4} className="mt-3 mb-5">
+            <Col xs={12} md={4} className="mt-md-3 mb-md-5">
                 <Link to={ {pathname:"/cuisine/chinese", state:{from:'root'}}} onClick={()=>GetData('Chinese')}>
                     <Card className="grid-card mx-auto">
                         <Card.Img variant="top" src={chineseCuisineImg}></Card.Img>

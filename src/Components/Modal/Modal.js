@@ -13,15 +13,6 @@ function ModalComponent(){
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  /* const handleClick = (event) =>{
-    event.stopPropagation()
-     if(event.target.style.backgroundColor !== "green"){
-      event.target.style.backgroundColor="green"
-    } else {
-      event.target.style.backgroundColor="#6c757d"
-    } 
-  } */
-
     return(
         <>
         <div className="SearchIconWrapper">
@@ -43,9 +34,9 @@ function ModalComponent(){
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body >
-            <Form>
-                <FormControl type="search" placeholder="Search"/>
-              </Form>  
+                <Form>
+                  <FormControl type="search" placeholder="Search"/>
+                </Form>  
             </Modal.Body>
             <Modal.Footer>
               <Button onClick={handleClose} variant="danger">Close</Button>

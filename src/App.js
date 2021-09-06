@@ -5,17 +5,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
 
 function App() {
-  /* 
-  useEffect(()=>{
-    fetch('https://api.spoonacular.com/recipes/complexSearch?cuisine=Italian&apiKey=28087beca5d243b28544ddf2484ea4ac')
-    .then(res=>{
-      const data = res.json()
-      return data
-    })
-    .then(data =>{
-      console.log(data.results)
-    })
-  }) */
 
   return (
     <Router>
